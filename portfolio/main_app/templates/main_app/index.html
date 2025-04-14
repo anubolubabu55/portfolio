@@ -1,0 +1,231 @@
+<!-- main_app/templates/main_app/index.html -->
+{% extends 'main_app/base.html' %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section" style="background-color: #ffffff !important; position: relative; z-index: 1; visibility: visible !important; display: block !important; margin-top: 60px; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+    <div class="container" style="visibility: visible !important; display: block !important;">
+        <div class="row" style="visibility: visible !important;">
+            <div class="col-lg-8" style="visibility: visible !important;">
+                <h1 class="mb-4" style="color: #000000 !important; visibility: visible !important; font-size: 2.8rem !important;">Hi I'm <span class="name-highlight" style="color: #0056b3 !important; border-bottom: 2px solid #000 !important;">Anubolu Babu</span></h1>
+                <p class="lead mb-4" style="color: #000000 !important; font-weight: 800 !important; visibility: visible !important; font-size: 1.2rem !important; line-height: 1.8 !important;">
+                    As a skilled Python Django developer with 4 years of experience, I possess expertise in developing cross-platform
+                    web applications that deliver seamless user experiences. Additionally, I have a strong
+                    command over building RESTful APIs using Django Rest Framework and backend development using PostgreSQL, allowing me to
+                    create robust and scalable server-side applications. With my technical proficiency and ability to work in a
+                    team environment, I am confident in my ability to contribute to your organization's success.
+                </p>
+                
+                <div class="cta-buttons animate-text-delay-2">
+                    <a href="{% url 'projects' %}" class="btn btn-primary me-3">View My Work</a>
+                    <a href="{% url 'contact' %}" class="btn btn-outline-dark">Get In Touch</a>
+                </div>
+                
+                <div class="personal-info" style="background-color: #f8f9fa !important; border: 1px solid #ddd !important; padding: 20px !important; margin-top: 30px !important; visibility: visible !important; border-radius: 8px !important;">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <dl>
+                                <dt style="color: #000000 !important; font-weight: 600 !important;">Name:</dt>
+                                <dd style="color: #000000 !important; font-weight: 700 !important;">Anubolu Babu</dd>
+                            </dl>
+                        </div>
+                        <div class="col-md-6">
+                            <dl>
+                                <dt style="color: #000000 !important; font-weight: 600 !important;">Email:</dt>
+                                <dd style="color: #000000 !important; font-weight: 700 !important;">anubolubabu55@gmail.com</dd>
+                            </dl>
+                        </div>
+                        <div class="col-md-6">
+                            <dl>
+                                <dt style="color: #000000 !important; font-weight: 600 !important;">Date of birth:</dt>
+                                <dd style="color: #000000 !important; font-weight: 700 !important;">02 Aug 1995</dd>
+                            </dl>
+                        </div>
+                        <div class="col-md-6">
+                            <dl>
+                                <dt style="color: #000000 !important; font-weight: 600 !important;">From:</dt>
+                                <dd style="color: #000000 !important; font-weight: 700 !important;">Chapiri,Andhra Pradesh, India</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center" style="visibility: visible !important;">
+                <div class="experience-circle" style="background-color: #f9e04c !important; border: 2px solid #000 !important; width: 120px !important; height: 120px !important; border-radius: 50% !important; display: flex !important; justify-content: center !important; align-items: center !important; margin: 0 auto 20px !important;">
+                    <span style="color: #000000 !important; font-size: 60px !important; font-weight: bold !important;">4</span>
+                </div>
+                <h3 style="color: #000000 !important; font-weight: 600 !important;">Years of experience</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Skills Section -->
+<section class="py-5" id="featured-skills">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h2 class="section-title">My Expertise</h2>
+                <p class="section-subtitle">Core technologies I specialize in</p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-4 mb-4">
+                <div class="skill-card h-100">
+                    <div class="card-body text-center">
+                        <div class="skill-icon mb-3">
+                            <i class="fab fa-python fa-3x"></i>
+                        </div>
+                        <h3 class="card-title">Python & Django</h3>
+                        <p class="card-text">Building scalable web applications with Django and DRF, following best practices and design patterns.</p>
+                        <div class="skill-level">
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 95%;" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="skill-card h-100">
+                    <div class="card-body text-center">
+                        <div class="skill-icon mb-3">
+                            <i class="fas fa-database fa-3x"></i>
+                        </div>
+                        <h3 class="card-title">Database Design</h3>
+                        <p class="card-text">Expert in PostgreSQL database design, optimization, and management for high-performance applications.</p>
+                        <div class="skill-level">
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="skill-card h-100">
+                    <div class="card-body text-center">
+                        <div class="skill-icon mb-3">
+                            <i class="fas fa-code fa-3x"></i>
+                        </div>
+                        <h3 class="card-title">Frontend Development</h3>
+                        <p class="card-text">Creating responsive user interfaces with HTML, CSS, JavaScript, and Bootstrap.</p>
+                        <div class="skill-level">
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Projects Section -->
+<section class="py-5 bg-light" id="featured-projects">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Showcasing my best work</p>
+            </div>
+        </div>
+        <div class="row">
+            {% for project in featured_projects %}
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="project-card h-100">
+                    {% if project.image %}
+                    <img src="{{ project.image.url }}" class="card-img-top" alt="{{ project.title }}">
+                    {% else %}
+                    <div class="card-img-top project-placeholder">
+                        <i class="fas fa-laptop-code fa-3x text-secondary"></i>
+                    </div>
+                    {% endif %}
+                    <div class="card-body">
+                        <h3 class="card-title">{{ project.title }}</h3>
+                        <p class="card-text">{{ project.description|truncatewords:20 }}</p>
+                        <div class="project-tech">
+                            {% for tech in project.technologies.all|slice:":3" %}
+                            <span class="badge bg-primary me-1">{{ tech.name }}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="{% url 'project_detail' project.id %}" class="btn btn-outline-primary btn-sm">View Details</a>
+                        {% if project.github_url %}
+                        <a href="{{ project.github_url }}" class="btn btn-dark btn-sm" target="_blank">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="col-12 text-center">
+                <p>Projects coming soon! Check back later for updates.</p>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="row mt-4">
+            <div class="col-12 text-center">
+                <a href="{% url 'projects' %}" class="btn btn-primary">View All Projects</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Experience Highlight Section -->
+<section class="py-5" id="experience-highlight">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h2 class="section-title">Professional Experience</h2>
+                <p class="section-subtitle">4+ years in E-learning technology</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="timeline-container">
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Python Django Developer</h3>
+                            <h4>E-learning Startup</h4>
+                            <p class="timeline-date"><i class="far fa-calendar-alt me-2"></i>2020 - Present</p>
+                            <ul class="timeline-details">
+                                <li>Developed and maintained robust e-learning platforms using Python, Django, and PostgreSQL.</li>
+                                <li>Built RESTful APIs with Django Rest Framework for mobile applications.</li>
+                                <li>Implemented responsive frontend designs using Bootstrap and JavaScript.</li>
+                                <li>Optimized database performance and application response times.</li>
+                            </ul>
+                            <a href="{% url 'experience' %}" class="btn btn-outline-primary btn-sm">View Full Experience</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact CTA Section -->
+<section class="py-5 bg-light" id="contact-cta">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto text-center">
+                <h2 class="section-title">Let's Work Together</h2>
+                <p class="lead mb-4">
+                    Looking for a skilled Python Django developer for your next project?
+                    I'd love to hear from you and discuss how I can help turn your ideas into reality.
+                </p>
+                <div class="cta-buttons">
+                    <a href="{% url 'contact' %}" class="btn btn-primary btn-lg">Get In Touch</a>
+                    <a href="#" class="btn btn-outline-dark btn-lg ms-3">Download CV</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

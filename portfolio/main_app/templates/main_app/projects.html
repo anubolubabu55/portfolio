@@ -1,0 +1,123 @@
+<!-- main_app/templates/main_app/projects.html -->
+{% extends 'main_app/base.html' %}
+
+{% block title %}Projects - Anubolu Babu{% endblock %}
+
+{% block content %}
+<!-- Projects Hero Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h1 class="section-title">My Projects</h1>
+                <p class="section-subtitle">A showcase of my work</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Filter Buttons -->
+<section class="py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-4">
+                <div class="filter-buttons">
+                    <button class="btn btn-outline-primary me-2 mb-2 filter-btn active" data-filter="all">All</button>
+                    <button class="btn btn-outline-primary me-2 mb-2 filter-btn" data-filter="django">Django</button>
+                    <button class="btn btn-outline-primary me-2 mb-2 filter-btn" data-filter="api">API</button>
+                    <button class="btn btn-outline-primary me-2 mb-2 filter-btn" data-filter="frontend">Frontend</button>
+                    <button class="btn btn-outline-primary me-2 mb-2 filter-btn" data-filter="database">Database</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Grid -->
+<section class="py-4">
+    <div class="container">
+        <div class="row">
+            {% for project in projects %}
+            <div class="col-lg-4 col-md-6 mb-4 project-item 
+                {% for tech in project.technologies.all %}
+                    {{ tech.name|lower }}
+                {% endfor %}">
+                <div class="card project-card h-100">
+                    {% if project.image %}
+                    <img src="{{ project.image.url }}" class="card-img-top" alt="{{ project.title }}">
+                    {% else %}
+                    <div class="card-img-top project-placeholder d-flex align-items-center justify-content-center">
+                        <i class="fas fa-code fa-3x text-muted"></i>
+                    </div>
+                    {% endif %}
+                    <div class="card-body">
+                        <h3 class="card-title">{{ project.title }}</h3>
+                        <p class="card-text">{{ project.description|truncatewords:25 }}</p>
+                        <div class="project-tech mb-3">
+                            {% for tech in project.technologies.all %}
+                            <span class="badge bg-secondary me-1 mb-1">{{ tech.name }}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white border-top-0">
+                        <a href="{% url 'project_detail' project.id %}" class="btn btn-outline-primary">View Details</a>
+                        {% if project.github_url %}
+                        <a href="{{ project.github_url }}" class="btn btn-dark ms-2" target="_blank">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="col-12 text-center py-5">
+                <p>No projects have been added yet. Check back soon!</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Project Detail Template -->
+<div class="modal fade" id="projectDetailModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="projectDetailTitle"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="projectDetailContent">
+                <!-- Content will be loaded dynamically -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a href="#" class="btn btn-primary" id="projectDetailLink" target="_blank">View Project</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    $(document).ready(function() {
+        // Project detail modal functionality
+        $('.view-project-btn').on('click', function() {
+            const projectId = $(this).data('project-id');
+            $.ajax({
+                url: `/projects/${projectId}/detail/`,
+                type: 'GET',
+                success: function(response) {
+                    $('#projectDetailTitle').text(response.title);
+                    $('#projectDetailContent').html(response.content);
+                    $('#projectDetailLink').attr('href', response.project_url);
+                    $('#projectDetailModal').modal('show');
+                },
+                error: function() {
+                    alert('Error loading project details');
+                }
+            });
+        });
+    });
+</script>
+{% endblock %}
