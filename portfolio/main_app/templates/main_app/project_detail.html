@@ -1,0 +1,151 @@
+<!-- main_app/templates/main_app/project_detail.html -->
+{% extends 'main_app/base.html' %}
+
+{% block title %}{{ project.title }} - Anubolu Babu{% endblock %}
+
+{% block content %}
+<!-- Project Detail Hero -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="section-title">{{ project.title }}</h1>
+                <div class="project-tech mb-4">
+                    {% for tech in project.technologies.all %}
+                    <span class="badge bg-secondary me-2">{{ tech.name }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Project Detail Content -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="project-detail-content">
+                    {% if project.image %}
+                    <img src="{{ project.image.url }}" alt="{{ project.title }}" class="img-fluid project-detail-image w-100 mb-4">
+                    {% else %}
+                    <div class="project-detail-image project-placeholder d-flex align-items-center justify-content-center mb-4" style="height: 400px;">
+                        <i class="fas fa-code fa-4x text-muted"></i>
+                    </div>
+                    {% endif %}
+                    
+                    <div class="project-description">
+                        {{ project.description|linebreaks }}
+                    </div>
+                    
+                    <h3 class="mt-5 mb-3">Key Features</h3>
+                    <ul class="feature-list">
+                        <li>User authentication and authorization</li>
+                        <li>Responsive design using Bootstrap</li>
+                        <li>RESTful API implementation with Django Rest Framework</li>
+                        <li>Database integration with PostgreSQL</li>
+                        <li>Form validation and error handling</li>
+                    </ul>
+                    
+                    <h3 class="mt-5 mb-3">Technical Details</h3>
+                    <p>
+                        This project was built using Django framework with PostgreSQL as the database. 
+                        The frontend was developed using HTML, CSS, JavaScript, and Bootstrap. 
+                        The project follows MVC architecture and implements RESTful APIs for data communication.
+                    </p>
+                    
+                    <h3 class="mt-5 mb-3">Challenges and Solutions</h3>
+                    <p>
+                        During development, I faced challenges in implementing real-time features.
+                        I solved this by integrating WebSockets for instant communication between clients.
+                        Another challenge was optimizing database queries for better performance,
+                        which I addressed by implementing proper indexing and query optimization techniques.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <div class="project-detail-sidebar">
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <h4 class="mb-0">Project Details</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <h5>Client</h5>
+                                <p>E-learning Platform</p>
+                            </div>
+                            <div class="mb-3">
+                                <h5>Duration</h5>
+                                <p>3 months</p>
+                            </div>
+                            <div class="mb-3">
+                                <h5>Role</h5>
+                                <p>Full Stack Developer</p>
+                            </div>
+                            <div>
+                                <h5>Technologies</h5>
+                                <div class="project-tech">
+                                    {% for tech in project.technologies.all %}
+                                    <span class="badge bg-secondary me-1 mb-1">{{ tech.name }}</span>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <h4 class="mb-0">Project Links</h4>
+                        </div>
+                        <div class="card-body">
+                            {% if project.project_url %}
+                            <a href="{{ project.project_url }}" class="btn btn-primary w-100 mb-3" target="_blank">
+                                <i class="fas fa-external-link-alt me-2"></i>Live Demo
+                            </a>
+                            {% endif %}
+                            
+                            {% if project.github_url %}
+                            <a href="{{ project.github_url }}" class="btn btn-dark w-100" target="_blank">
+                                <i class="fab fa-github me-2"></i>View Code
+                            </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="mb-0">Other Projects</h4>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <!-- You can add related projects here -->
+                                <li class="list-group-item d-flex align-items-center">
+                                    <i class="fas fa-code-branch me-3 text-primary"></i>
+                                    <a href="#">E-learning Dashboard</a>
+                                </li>
+                                <li class="list-group-item d-flex align-items-center">
+                                    <i class="fas fa-code-branch me-3 text-primary"></i>
+                                    <a href="#">Quiz Application</a>
+                                </li>
+                                <li class="list-group-item d-flex align-items-center">
+                                    <i class="fas fa-code-branch me-3 text-primary"></i>
+                                    <a href="#">Payment Gateway Integration</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mt-5">
+            <div class="col-12 text-center">
+                <a href="{% url 'projects' %}" class="btn btn-outline-primary">
+                    <i class="fas fa-arrow-left me-2"></i>Back to Projects
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

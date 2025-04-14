@@ -1,0 +1,118 @@
+{% extends 'main_app/base.html' %}
+
+{% block title %}Achievements & Awards - Anubolu Babu{% endblock %}
+
+{% block content %}
+<!-- Achievements Header -->
+<section class="py-5 bg-light" style="margin-top: 20px;">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h1 class="section-title">Achievements & Awards</h1>
+                <p class="section-subtitle">Recognitions and milestones throughout my career</p>
+            </div>
+        </div>
+        
+        <!-- Featured Achievements -->
+        {% if featured_achievements %}
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="h3 mb-4 text-center">Featured Achievements</h2>
+            </div>
+            {% for achievement in featured_achievements %}
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 achievement-card">
+                    {% if achievement.image %}
+                    <img src="{{ achievement.image.url }}" class="card-img-top" alt="{{ achievement.title }}">
+                    {% endif %}
+                    <div class="card-body">
+                        <span class="badge {% if achievement.category == 'award' %}bg-warning{% elif achievement.category == 'certification' %}bg-success{% elif achievement.category == 'recognition' %}bg-info{% else %}bg-secondary{% endif %} mb-2">
+                            {{ achievement.get_category_display }}
+                        </span>
+                        <h3 class="card-title h5">{{ achievement.title }}</h3>
+                        <h4 class="card-subtitle mb-2 text-muted">{{ achievement.organization }}</h4>
+                        <p class="card-text small text-muted">{{ achievement.date_received|date:"F Y" }}</p>
+                        <p class="card-text">{{ achievement.description|truncatewords:30 }}</p>
+                        {% if achievement.link %}
+                        <a href="{{ achievement.link }}" class="btn btn-sm btn-outline-primary" target="_blank">
+                            View Certificate
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        
+        <!-- Achievements by Category -->
+        {% for category_name, achievements in grouped_achievements.items %}
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="h3 mb-4">
+                    {% if category_name == 'awards' %}
+                    <i class="fas fa-trophy text-warning me-2"></i> Awards
+                    {% elif category_name == 'certifications' %}
+                    <i class="fas fa-certificate text-success me-2"></i> Certifications
+                    {% elif category_name == 'recognitions' %}
+                    <i class="fas fa-star text-info me-2"></i> Recognitions
+                    {% elif category_name == 'publications' %}
+                    <i class="fas fa-book text-primary me-2"></i> Publications
+                    {% endif %}
+                </h2>
+            </div>
+            
+            {% for achievement in achievements %}
+            <div class="col-md-6 mb-4">
+                <div class="card h-100 achievement-item">
+                    <div class="card-body">
+                        <div class="row">
+                            {% if achievement.image %}
+                            <div class="col-md-3">
+                                <img src="{{ achievement.image.url }}" class="img-fluid rounded" alt="{{ achievement.title }}">
+                            </div>
+                            <div class="col-md-9">
+                            {% else %}
+                            <div class="col-12">
+                            {% endif %}
+                                <h3 class="h5 mb-2">{{ achievement.title }}</h3>
+                                <h4 class="h6 text-muted mb-2">{{ achievement.organization }}</h4>
+                                <p class="small text-muted mb-2">{{ achievement.date_received|date:"F Y" }}</p>
+                                <p>{{ achievement.description|truncatewords:20 }}</p>
+                                {% if achievement.link %}
+                                <a href="{{ achievement.link }}" class="btn btn-sm btn-outline-primary" target="_blank">
+                                    View Details
+                                </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% empty %}
+        <div class="row">
+            <div class="col-12">
+                <div class="alert alert-info text-center">
+                    No achievements available yet. Check back soon!
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto text-center">
+                <h2 class="section-title">Want to collaborate?</h2>
+                <p class="lead mb-4">I'm always open to new opportunities and challenges. Let's create something amazing together!</p>
+                <a href="{% url 'contact' %}" class="btn btn-primary btn-lg">Contact Me</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %} 

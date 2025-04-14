@@ -1,0 +1,67 @@
+/* static/css/responsive.css */
+
+/* Extra small devices (phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .hero-section {
+        height: auto;
+        min-height: 90vh;
+    }
+    
+    .timeline-item {
+        padding: 1.5rem;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .hero-section {
+        height: auto;
+        min-height: 90vh;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .about-image {
+        margin-bottom: 2rem;
+    }
+    
+    .project-detail-sidebar {
+        margin-top: 2rem;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    body {
+        padding-top: 76px;
+    }
+    
+    .navbar {
+        padding: 10px 0;
+    }
+    
+    .nav-link {
+        margin: 0 10px;
+    }
+}
+
+/* Animation adjustments for mobile */
+@media (max-width: 767.98px) {
+    .animate-text-delay,
+    .animate-text-delay-2,
+    .animate-text-delay-3 {
+        animation-delay: 0.2s;
+    }
+}
+
+/* Project grid adjustments */
+@media (max-width: 575.98px) {
+    .filter-buttons .btn {
+        margin-bottom: 10px;
+    }
+}

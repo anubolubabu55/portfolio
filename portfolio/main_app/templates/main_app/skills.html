@@ -1,0 +1,406 @@
+<!-- main_app/templates/main_app/skills.html -->
+{% extends 'main_app/base.html' %}
+
+{% block title %}Skills - Anubolu Babu{% endblock %}
+
+{% block content %}
+
+<!-- Skills Hero Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+                <h1 class="section-title">My Skills</h1>
+    </div>
+    
+</section>
+
+<!-- Skills Tabs -->
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    
+    <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="all-tab" data-toggle="tab" href="#all" role="tab" aria-controls="all" aria-selected="true">ALL</a>
+    </li>
+    <li class="nav-item" role="presentation">
+        <a class="nav-link" id="backend-tab" data-toggle="tab" href="#backend" role="tab" aria-controls="backend" aria-selected="false">Backend</a>
+    </li>
+    <li class="nav-item" role="presentation">
+        <a class="nav-link" id="frontend-tab" data-toggle="tab" href="#frontend" role="tab" aria-controls="frontend" aria-selected="false">Frontend</a>
+    </li>
+    <li class="nav-item" role="presentation">
+        <a class="nav-link" id="database-tab" data-toggle="tab" href="#database" role="tab" aria-controls="database" aria-selected="false">Database</a>
+    </li>
+    <li class="nav-item" role="presentation">
+        <a class="nav-link" id="tools-tab" data-toggle="tab" href="#tools" role="tab" aria-controls="tools" aria-selected="false">Tools</a>
+    </li>
+    <li class="nav-item" role="presentation">
+        <a class="nav-link" id="others-tab" data-toggle="tab" href="#others" role="tab" aria-controls="others" aria-selected="false">Others</a>
+    </li>
+</ul>
+<br>
+<div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
+        
+        <div class="row">
+            <!-- Backend Skills -->
+            <div class="col-4 col-md-2 mb-4">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <i class="fab fa-python fa-2x text-primary"></i>
+                    <p class="mt-2 mb-0">Python</p>
+                </div>
+            </div>
+            <div class="col-4 col-md-2 mb-4">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <i class="fab fa-django fa-2x text-success"></i>
+                    <p class="mt-2 mb-0">Django</p>
+                </div>
+            </div>
+            <div class="col-4 col-md-2 mb-4">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <i class="fas fa-server fa-2x text-info"></i>
+                    <p class="mt-2 mb-0">DRF</p>
+                </div>
+            </div>
+            <div class="col-4 col-md-2 mb-4">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <i class="fab fa-python fa-2x text-success"></i>
+                    <p class="mt-2 mb-0">Flask</p>
+                </div>
+            </div>
+            <div class="col-4 col-md-2 mb-4">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <i class="fas fa-server fa-2x text-info"></i>
+                    <p class="mt-2 mb-0">FastAPI</p>
+                </div>
+            </div>
+            <div class="col-4 col-md-2 mb-4">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <i class="fab fa-php fa-2x text-primary"></i>
+                    <p class="mt-2 mb-0">PHP</p>
+                </div>
+            </div>
+            <div class="col-4 col-md-2 mb-4">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <i class="fab fa-js fa-2x text-warning"></i>
+                    <p class="mt-2 mb-0">JavaScript</p>
+                </div>
+            </div>
+
+            <!-- Frontend Skills -->
+            <div class="col-4 col-md-2 mb-4">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <i class="fab fa-html5 fa-2x text-danger"></i>
+                    <p class="mt-2 mb-0">HTML5</p>
+                </div>
+            </div>
+            <div class="col-4 col-md-2 mb-4">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <i class="fab fa-css3-alt fa-2x text-primary"></i>
+                    <p class="mt-2 mb-0">CSS3</p>
+                </div>
+            </div>
+            <div class="col-4 col-md-2 mb-4">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <i class="fab fa-bootstrap fa-2x text-purple"></i>
+                    <p class="mt-2 mb-0">Bootstrap</p>
+                </div>
+            </div>
+
+            <!-- Database Skills -->
+            <div class="col-4 col-md-2 mb-4">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <i class="fas fa-database fa-2x text-warning"></i>
+                    <p class="mt-2 mb-0">SQL</p>
+                </div>
+            </div>
+            <div class="col-4 col-md-2 mb-4">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <i class="fas fa-database fa-2x text-warning"></i>
+                    <p class="mt-2 mb-0">POSTGRES</p>
+                </div>
+            </div>
+            <div class="col-4 col-md-2 mb-4">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <i class="fas fa-database fa-2x text-warning"></i>
+                    <p class="mt-2 mb-0">Sqlite3</p>
+                </div>
+            </div>
+
+            <!-- Others -->
+            <div class="col-4 col-md-2 mb-4">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <i class="fab fa-python fa-2x text-primary"></i>
+                    <p class="mt-2 mb-0">Pandas</p>
+                </div>
+            </div>
+            <div class="col-4 col-md-2 mb-4">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <i class="fab fa-python fa-2x text-primary"></i>
+                    <p class="mt-2 mb-0">Numpy</p>
+                </div>
+            </div>
+            <div class="col-4 col-md-2 mb-4">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <i class="fab fa-python fa-2x text-primary"></i>
+                    <p class="mt-2 mb-0">Matplotlib</p>
+                </div>
+            </div>
+            <div class="col-4 col-md-2 mb-4">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <i class="fab fa-python fa-2x text-primary"></i>
+                    <p class="mt-2 mb-0">Seaborn</p>
+                </div>
+            </div>
+            <div class="col-4 col-md-2 mb-4">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <i class="fas fa-cogs fa-2x text-info"></i>
+                    <p class="mt-2 mb-0">API Testing</p>
+                </div>
+            </div>
+            <div class="col-4 col-md-2 mb-4">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <i class="fas fa-cogs fa-2x text-info"></i>
+                    <p class="mt-2 mb-0">Manual Testing</p>
+                </div>
+            </div>
+
+            <!-- Additional Tools -->
+            <div class="col-4 col-md-2 mb-4">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <i class="fab fa-git fa-2x text-danger"></i>
+                    <p class="mt-2 mb-0">GIT</p>
+                </div>
+            </div>
+            <div class="col-4 col-md-2 mb-4">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <i class="fab fa-github fa-2x text-dark"></i>
+                    <p class="mt-2 mb-0">GITHUB</p>
+                </div>
+            </div>
+            <div class="col-4 col-md-2 mb-4">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <i class="fab fa-bitbucket fa-2x text-primary"></i>
+                    <p class="mt-2 mb-0">BITBUCKET</p>
+                </div>
+            </div>
+            <div class="col-4 col-md-2 mb-4">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <i class="fab fa-linux fa-2x text-dark"></i>
+                    <p class="mt-2 mb-0">LINUX</p>
+                </div>
+            </div>
+            <div class="col-4 col-md-2 mb-4">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <i class="fab fa-digital-ocean fa-2x text-info"></i>
+                    <p class="mt-2 mb-0">DIGITAL OCEAN</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="backend" role="tabpanel" aria-labelledby="backend-tab">
+        <!-- Display backend skills here -->
+        <div class="row">
+            <div class="col-4 col-md-2 mb-4">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <i class="fab fa-python fa-2x text-primary"></i>
+                    <p class="mt-2 mb-0">Python</p>
+                </div>
+            </div>
+            <div class="col-4 col-md-2 mb-4">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <i class="fab fa-django fa-2x text-success"></i>
+                    <p class="mt-2 mb-0">Django</p>
+                </div>
+            </div>
+            <div class="col-4 col-md-2 mb-4">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <i class="fas fa-server fa-2x text-info"></i>
+                    <p class="mt-2 mb-0">DRF</p>
+                </div>
+            </div>
+            <div class="col-4 col-md-2 mb-4">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <i class="fab fa-python fa-2x text-success"></i>
+                    <p class="mt-2 mb-0">Flask</p>
+                </div>
+            </div>
+            <div class="col-4 col-md-2 mb-4">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <i class="fas fa-server fa-2x text-info"></i>
+                    <p class="mt-2 mb-0">FastAPI</p>
+                </div>
+            </div>
+            <div class="col-4 col-md-2 mb-4">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <i class="fab fa-php fa-2x text-primary"></i>
+                    <p class="mt-2 mb-0">PHP</p>
+                </div>
+            </div>
+            <div class="col-4 col-md-2 mb-4">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <i class="fab fa-js fa-2x text-warning"></i>
+                    <p class="mt-2 mb-0">JavaScript</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="frontend" role="tabpanel" aria-labelledby="frontend-tab">
+        <div class="row">
+            <div class="col-4 col-md-2 mb-4">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <i class="fab fa-html5 fa-2x text-danger"></i>
+                    <p class="mt-2 mb-0">HTML5</p>
+                </div>
+            </div>
+            <div class="col-4 col-md-2 mb-4">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <i class="fab fa-css3-alt fa-2x text-primary"></i>
+                    <p class="mt-2 mb-0">CSS3</p>
+                </div>
+            </div>
+            <div class="col-4 col-md-2 mb-4">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <i class="fab fa-bootstrap fa-2x text-purple"></i>
+                    <p class="mt-2 mb-0">Bootstrap</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="database" role="tabpanel" aria-labelledby="database-tab">
+        <div class="row">
+            <div class="col-4 col-md-2 mb-4">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <i class="fas fa-database fa-2x text-warning"></i>
+                    <p class="mt-2 mb-0">SQL</p>
+                </div>
+            </div>
+            <div class="col-4 col-md-2 mb-4">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <i class="fas fa-database fa-2x text-warning"></i>
+                    <p class="mt-2 mb-0">POSTGRES</p>
+                </div>
+            </div>
+            <div class="col-4 col-md-2 mb-4">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <i class="fas fa-database fa-2x text-warning"></i>
+                    <p class="mt-2 mb-0">Sqlite3</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="tools" role="tabpanel" aria-labelledby="tools-tab">
+        <div class="row">
+            <div class="col-4 col-md-2 mb-4">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <i class="fas fa-tools fa-2x text-info"></i>
+                    <p class="mt-2 mb-0">POSTMAN</p>
+                </div>
+            </div>
+            <div class="col-4 col-md-2 mb-4">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <i class="fas fa-tools fa-2x text-info"></i>
+                    <p class="mt-2 mb-0">VS Code</p>
+                </div>
+            </div>
+            <div class="col-4 col-md-2 mb-4">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <i class="fas fa-tools fa-2x text-info"></i>
+                    <p class="mt-2 mb-0">CURSOR</p>
+                </div>
+            </div>
+            <div class="col-4 col-md-2 mb-4">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <i class="fas fa-tools fa-2x text-info"></i>
+                    <p class="mt-2 mb-0">PG Admin</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="others" role="tabpanel" aria-labelledby="others-tab">
+        <div class="row">
+            <div class="col-4 col-md-2 mb-4">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <i class="fab fa-python fa-2x text-primary"></i>
+                    <p class="mt-2 mb-0">Pandas</p>
+                </div>
+            </div>
+            <div class="col-4 col-md-2 mb-4">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <i class="fab fa-python fa-2x text-primary"></i>
+                    <p class="mt-2 mb-0">Numpy</p>
+                </div>
+            </div>
+            <div class="col-4 col-md-2 mb-4">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <i class="fab fa-python fa-2x text-primary"></i>
+                    <p class="mt-2 mb-0">Matplotlib</p>
+                </div>
+            </div>
+            <div class="col-4 col-md-2 mb-4">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <i class="fab fa-python fa-2x text-primary"></i>
+                    <p class="mt-2 mb-0">Seaborn</p>
+                </div>
+            </div>
+            <div class="col-4 col-md-2 mb-4">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <i class="fas fa-cogs fa-2x text-info"></i>
+                    <p class="mt-2 mb-0">API Testing</p>
+                </div>
+            </div>
+            <div class="col-4 col-md-2 mb-4">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <i class="fas fa-cogs fa-2x text-info"></i>
+                    <p class="mt-2 mb-0">Manual Testing</p>
+                </div>
+            </div>
+            <div class="col-4 col-md-2 mb-4">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <i class="fab fa-github fa-2x text-dark"></i>
+                    <p class="mt-2 mb-0">GITHUB</p>
+                </div>
+            </div>
+            <div class="col-4 col-md-2 mb-4">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <i class="fab fa-bitbucket fa-2x text-primary"></i>
+                    <p class="mt-2 mb-0">BITBUCKET</p>
+                </div>
+            </div>
+            <div class="col-4 col-md-2 mb-4">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <i class="fab fa-linux fa-2x text-dark"></i>
+                    <p class="mt-2 mb-0">LINUX</p>
+                </div>
+            </div>
+            <div class="col-4 col-md-2 mb-4">
+                <div class="p-3 bg-light rounded shadow-sm">
+                    <i class="fab fa-digital-ocean fa-2x text-info"></i>
+                    <p class="mt-2 mb-0">DIGITAL OCEAN</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<style>
+.tab-content {
+    min-height: 600px; /* Fallback for browsers that don't support vh units */
+}
+
+.nav-tabs {
+    border-bottom: 2px solid #dee2e6;
+}
+
+.nav-tabs .nav-link {
+    margin-bottom: -2px;
+    padding: 1rem 1.5rem;
+}
+
+.nav-tabs .nav-link.active {
+    border-color: #dee2e6 #dee2e6 #fff;
+    font-weight: 600;
+}
+</style>
+
+{% endblock %}

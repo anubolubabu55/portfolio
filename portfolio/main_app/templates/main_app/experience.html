@@ -1,0 +1,126 @@
+{% extends 'main_app/base.html' %}
+
+{% block title %}Experience - Anubolu Babu{% endblock %}
+
+{% block content %}
+<!-- Experience Page Header -->
+<section class="py-5 bg-light" style="margin-top: 20px;">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h1 class="section-title">Professional Experience</h1>
+                <p class="section-subtitle">My career journey and education</p>
+            </div>
+        </div>
+        
+        <!-- Timeline Section -->
+        <div class="row">
+            <div class="col-lg-10 col-md-12 mx-auto">
+                <div class="timeline">
+                    {% for item in experiences %}
+                        <div class="timeline-item">
+                            {% if item.type == 'work' %}
+                                <!-- Display work experience -->
+                                <h3>{{ item.job_title }}</h3>
+                                <h4>{{ item.company }}</h4>
+                                <p class="timeline-date">{{ item.start_date|date:"M Y" }} - 
+                                    {% if item.end_date %}
+                                        {{ item.end_date|date:"M Y" }}
+                                    {% else %}
+                                        Present
+                                    {% endif %}
+                                </p>
+                            {% else %}
+                                <!-- Display education -->
+                                <h3>{{ item.degree }} in {{ item.field_of_study }}</h3>
+                                <h4>{{ item.institution }}</h4>
+                                <p class="timeline-date">Graduated: {{ item.graduation_date|date:"M Y" }}</p>
+                            {% endif %}
+                            <p>{{ item.description }}</p>
+                        </div>
+                    {% empty %}
+                        <div class="alert alert-info text-center">No experience data available yet.</div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h2 class="section-title">Skills & Expertise</h2>
+                <p class="section-subtitle">Technologies I've worked with</p>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-6">
+                <h3 class="mb-4">Technical Skills</h3>
+                
+                <div class="skill-progress">
+                    <h5>Python & Django <span class="float-end">95%</span></h5>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-progress">
+                    <h5>RESTful APIs <span class="float-end">90%</span></h5>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-progress">
+                    <h5>PostgreSQL <span class="float-end">85%</span></h5>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6">
+                <h3 class="mb-4">Frontend Skills</h3>
+                
+                <div class="skill-progress">
+                    <h5>HTML & CSS <span class="float-end">80%</span></h5>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-progress">
+                    <h5>JavaScript <span class="float-end">75%</span></h5>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-progress">
+                    <h5>Bootstrap <span class="float-end">85%</span></h5>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto text-center">
+                <h2 class="section-title">Ready to Work Together?</h2>
+                <p class="lead mb-4">With 4+ years of experience and a strong portfolio of successful projects, I can help bring your ideas to life.</p>
+                <a href="{% url 'contact' %}" class="btn btn-primary btn-lg">Get In Touch</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
