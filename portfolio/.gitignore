@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+vendor/
+*.pyc
+
+# Environment variables
+.env
+.env.local
+
+# Build files
+dist/
+build/
+*.exe
+
+# Logs
+*.log
+logs/
+
+# Editor/IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS-generated files
+.DS_Store
+Thumbs.db
