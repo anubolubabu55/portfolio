@@ -27,4 +27,4 @@ logs/
 Thumbs.db
 
 # remove venv directory
-venv/
+../venv/
